@@ -1,0 +1,9 @@
+client\MQTTClientTest.class
+helperTest\TranslaterTest.class
+MQTTMessage\PublishMessageTest.class
+helperTest\PackageIdentifyTest.class
+MQTTMessage\ConnMessageTest.class
+helperTest\BytesTest.class
+MQTTMessage\PubackMessageTest.class
+helperTest\ArrayConnectTest.class
+MQTTMessage\PingreqTest.class
