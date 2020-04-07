@@ -60,7 +60,7 @@ public class MessageHandler {
         }catch (Exception exception){
             client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
             HelpMess errorMess = HelpMess.getIntance();
-            errorMess.setError(true);
+            errorMess.setType(HelpMess.HELP_MESS_TYPE.ERROR);
             errorMess.setErrorMessage("网络连接错误！");
             MessageObservable.getInstance().notifyObserver();
         }
