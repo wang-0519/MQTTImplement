@@ -13,6 +13,7 @@ public class Message implements Serializable{
     private String message = null;
     private String time = null;
     private int qos = 0;
+    private boolean isRetain = false;
 
     public Message(String mess){
         message = mess;
@@ -45,5 +46,13 @@ public class Message implements Serializable{
 
     public void setQos(String qos){
         this.qos = qos.charAt(3) - '0';
+    }
+
+    public boolean isRetain() {
+        return isRetain;
+    }
+
+    public void setRetain(boolean retain) {
+        isRetain = retain;
     }
 }

@@ -106,6 +106,22 @@ public class ClientInformation implements Serializable {
     }
 
     /**
+     * 跟新话题信息
+     * @param topics
+     */
+    public void updateTopicInformation(ArrayList<TopicInformation> topics){
+        for(TopicInformation ti : topics){
+            int i = 0;
+            while(i < topicInformation.size() && !ti.equals(topicInformation.get(i))){
+                i++;
+            }
+            if(i < topicInformation.size()){
+                topicInformation.get(i).setQos(ti.getQos());
+            }
+        }
+    }
+
+    /**
      *删除一组话题
      * @param topicInformation
      */

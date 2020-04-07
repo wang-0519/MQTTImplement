@@ -8,8 +8,9 @@ import java.io.Serializable;
  * Created by admin on 2020/3/25.
  */
 public class HelpMess implements Serializable{
-    //是否未错误信息
-    private boolean isError = false;
+
+    private HELP_MESS_TYPE type = HELP_MESS_TYPE.ERROR;
+    public enum HELP_MESS_TYPE{ERROR, RECIVE}
 
     //客户端id
     private String id = null;
@@ -68,10 +69,10 @@ public class HelpMess implements Serializable{
     }
 
     public boolean isError() {
-        return isError;
+        return type == HELP_MESS_TYPE.ERROR;
     }
 
-    public void setError(boolean error) {
-        isError = error;
+    public void setType(HELP_MESS_TYPE type) {
+        this.type = type;
     }
 }

@@ -97,7 +97,7 @@ public class ReciveMessageThread implements Runnable{
                     //连接错误
                     HelpMess errorMess = HelpMess.getIntance();
                     errorMess.setId(client.getId());
-                    errorMess.setError(true);
+                    errorMess.setType(HelpMess.HELP_MESS_TYPE.ERROR);
                     errorMess.setErrorMessage(message.getOther_mess().get("errorMessage"));
                     MessageObservable.getInstance().notifyObserver();
                 }
@@ -109,7 +109,7 @@ public class ReciveMessageThread implements Runnable{
 
                     HelpMess helpMess = HelpMess.getIntance();
                     helpMess.setId(client.getId());
-                    helpMess.setError(false);
+                    helpMess.setType(HelpMess.HELP_MESS_TYPE.RECIVE);
                     helpMess.setTopic(message.getOther_mess().get("topic"));
                     Message help = new Message(message.getOther_mess().get("message"));
                     help.setQos(message.getOther_mess().get("Qos"));
@@ -166,7 +166,7 @@ public class ReciveMessageThread implements Runnable{
                             topics.get(i).setQos(topicIsSub.get(i));
                         }
                     }
-                    client.addTopicInformation(topics);
+                    client.updateTopicInformation(topics);
                     sendThread.delete(message.getMess_identify());
                 }
                 break;
@@ -175,7 +175,6 @@ public class ReciveMessageThread implements Runnable{
                 message = new UnsubackMessage(bytes);
                 if(message.analysisMess()){
                     ArrayList<TopicInformation> topics = ((UnsubscribeMessage)(sendThread.getMessByIdentify(message.getMess_identify()))).getTopics();
-                    client.deleteTopicInformation(topics);
                     sendThread.delete(message.getMess_identify());
                 }
                 break;

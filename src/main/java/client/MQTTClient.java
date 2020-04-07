@@ -61,6 +61,7 @@ public class MQTTClient{
         AbstractMess message= new PublishMessage(qos, retain, topic, mess);
         Message publishMessage = new Message(mess);
         publishMessage.setQos(qos);
+        publishMessage.setRetain(retain);
         client.getTopic(topic).addMessage(publishMessage);
         if(client.getState() == ClientInformation.CONN_STATE.CONN){
             handler.send(message);
@@ -74,10 +75,12 @@ public class MQTTClient{
      * 订阅主题
      */
     public void subscribe(ArrayList<TopicInformation> topic){
+        client.addTopicInformation(topic);
         AbstractMess message = new SubscribeMessage(topic);
         if(client.getState() == ClientInformation.CONN_STATE.CONN){
             handler.send(message);
-            client.addTopicInformation(topic);
+        } else if(client.getState() == ClientInformation.CONN_STATE.SOCKET_CONNED){
+            handler.addMessageToQueue(message);
         }
     }
 
@@ -86,10 +89,12 @@ public class MQTTClient{
      * 取消订阅
      */
     public void unSubscribe(ArrayList<TopicInformation> topic){
+        client.deleteTopicInformation(topic);
+        AbstractMess message = new UnsubscribeMessage(topic);
         if(client.getState() == ClientInformation.CONN_STATE.CONN){
-            client.deleteTopicInformation(topic);
-            AbstractMess message = new UnsubscribeMessage(topic);
             handler.send(message);
+        } else if(client.getState() == ClientInformation.CONN_STATE.SOCKET_CONNED){
+            handler.addMessageToQueue(message);
         }
     }
 
