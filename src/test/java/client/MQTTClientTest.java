@@ -21,7 +21,7 @@ public class MQTTClientTest {
         ci.setWillTopic(null);
         ci.setWillMessage(null);
         ci.setCleanSession(false);
-        ci.setKeepAlive(3000);
+        ci.setKeepAlive(10);
         ci.setAutoConn(true);
         MQTTClient client = new MQTTClient(ci);
         TopicInformation ti = new TopicInformation();

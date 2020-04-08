@@ -21,11 +21,8 @@ public class MessageHandler {
      * 各类线程
      */
     private SendMessageThread sendThread = null;
-    private Thread reciveThread = null;
-    private ReciveMessageThread runnable = null;
-
-    //锁变量，控制发送消息的线程，当有消息需要发送时解锁，消息发送完毕后上锁
-    private byte[] by = null;
+    private ReciveMessageThread reciveThread = null;
+    private PingReqThread pingReqThread = null;
 
 
     //默认连接地址
@@ -39,7 +36,6 @@ public class MessageHandler {
     public MessageHandler(ClientInformation ci){
         try{
             this.client = ci;
-            by = new byte[0];
 
             //连接服务器
             if(client.getAddr() != null){
@@ -52,11 +48,12 @@ public class MessageHandler {
             //socket连接成功
             //启动各类线程
             client.setState(ClientInformation.CONN_STATE.SOCKET_CONNED);
-            sendThread = new SendMessageThread(socket.getOutputStream(), by, client);
+            sendThread = new SendMessageThread(socket.getOutputStream(), client);
             sendThread.start();
-            runnable = new ReciveMessageThread(sendThread, socket.getInputStream(), client);
-            reciveThread =new Thread(runnable);
-            reciveThread.start();
+            reciveThread = new ReciveMessageThread(sendThread, socket.getInputStream(), client);
+            new Thread(reciveThread).start();
+            pingReqThread = new PingReqThread(sendThread, client);
+            new Thread(pingReqThread).start();
         }catch (Exception exception){
             client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
             HelpMess errorMess = new HelpMess();
@@ -80,8 +77,9 @@ public class MessageHandler {
      */
     public void close(){
         try{
+            reciveThread.closeInputStream();
+            pingReqThread.close();
             sendThread.closeOutputStream();
-            runnable.closeInputStream();
             socket.close();
         }catch(Exception e){
             e.printStackTrace();

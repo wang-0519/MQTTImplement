@@ -30,10 +30,8 @@ public class SendMessageThread extends Thread{
     //线程池
     private ThreadPoolExecutor threadPool = null;
 
-    //socket连接锁
-    private byte[] bytes = null;
     //锁
-    private byte[] by = null;
+    private final byte[] by = new byte[0];
 
     //运行标志,通过改变此变量停止线程
     private boolean sign = true;
@@ -42,8 +40,7 @@ public class SendMessageThread extends Thread{
      * 构造器
      * @param ous
      */
-    public SendMessageThread(OutputStream ous, byte[] by, ClientInformation client){
-        this.by = by;
+    public SendMessageThread(OutputStream ous, ClientInformation client){
         os = ous;
         this.client = client;
         waitSend = new MessageQueue();
@@ -74,7 +71,12 @@ public class SendMessageThread extends Thread{
                     by.wait();
                 }
             }
-        }catch (Exception e){
+        }catch (IOException io){
+            io.printStackTrace();
+          setSign(false);
+          client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
+        } catch (Exception e){
+            e.printStackTrace();
             setSign(false);
         }
     }
@@ -89,6 +91,10 @@ public class SendMessageThread extends Thread{
         synchronized (by){
             by.notify();
         }
+        if(sign){
+            System.out.println("客户端存活");
+        }
+
     }
 
     /**
@@ -100,7 +106,7 @@ public class SendMessageThread extends Thread{
             return;
         }
         int k = BytesHandler.getTypeOfMessage(mess.getFixedHeader()[0]);
-        if( k == 1 || k == 5 || k == 6 || k == 8 || k == 10 || k == 12){
+        if( k == 1 || k == 5 || k == 6 || k == 8 || k == 10){
             sended.addMess(mess);
             try{
                 ReSendMessage send = new ReSendMessage(mess,this, 3, 10000);
@@ -109,7 +115,7 @@ public class SendMessageThread extends Thread{
                 e.printStackTrace();
             }
         }
-        if( k == 3 && Integer.valueOf(mess.getOther_mess().get("Qos")) != 0){
+        if( k == 3 && (mess.getOther_mess().get("Qos").charAt(3) - '0') != 0){
             sended.addMess(mess);
             try{
                 ReSendMessage send = new ReSendMessage(mess,this, 3, 10000);
@@ -117,6 +123,9 @@ public class SendMessageThread extends Thread{
             }catch (Exception e){
                 e.printStackTrace();
             }
+        }
+        if( k == 12){
+            sended.addMess(mess);
         }
     }
 

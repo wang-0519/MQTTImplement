@@ -24,6 +24,7 @@ public class PublishMessage extends AbstractMess {
     public PublishMessage(int qos, boolean retain, String topic, String mess){
         try{
             this.mess.put("message",mess);
+            this.mess.put("Qos","Qos" + qos);
             if(qos > 0){
                 this.mess_identify = PackageIdentify.getIdentify();
             }

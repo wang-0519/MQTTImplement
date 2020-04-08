@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd530a7f-08c9-4729-9538-f2fe31dd5a69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MQTTimplement-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/MQTTimplement-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MQTTMessage/AbstractMess.class" afterPath="$PROJECT_DIR$/target/classes/MQTTMessage/AbstractMess.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/PingReqThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MQTTMessage/impl/PublishMessage.class" afterPath="$PROJECT_DIR$/target/classes/MQTTMessage/impl/PublishMessage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/HelpMess.class" afterPath="$PROJECT_DIR$/target/classes/client/HelpMess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/MessageHandler.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/MessageHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/MessageObservable.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/MessageObservable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/ReSendMessage.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/ReSendMessage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/ReciveMessageThread.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/ReciveMessageThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/helperTest/BytesTest.class" afterPath="$PROJECT_DIR$/target/test-classes/helperTest/BytesTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/SendMessageThread.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/SendMessageThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/client/MQTTClientTest.class" afterPath="$PROJECT_DIR$/target/test-classes/client/MQTTClientTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java" afterPath="$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/client/HelpMess.java" afterPath="$PROJECT_DIR$/src/main/java/client/HelpMess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java" afterPath="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/MessageHandler.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/MessageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/MessageObservable.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/MessageObservable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/helperTest/BytesTest.java" afterPath="$PROJECT_DIR$/src/test/java/helperTest/BytesTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,6 +26,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MQTTimplement$MQTTClientTest_runClient.coverage" NAME="MQTTClientTest.runClient Coverage Results" MODIFIED="1586333012652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>client.*</FILTER>
+    </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -39,43 +44,81 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageHandler.java">
+      <file leaf-file-name="MQTTClientTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="64" column="68" lean-forward="false" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+            <state relative-caret-position="360">
+              <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PingReqThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/PingReqThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1581#1582#0" expanded="true" />
+                <element signature="e#1609#1610#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReSendMessage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReSendMessage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            <state relative-caret-position="162">
+              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendMessageThread.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SendMessageThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state relative-caret-position="3210">
+              <caret line="116" column="9" lean-forward="false" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+              <folding>
+                <element signature="e#3602#3603#0" expanded="true" />
+                <element signature="e#3647#3648#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PublishMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageObservable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageObservable.java">
+      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/client/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            <state relative-caret-position="205">
+              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+              <folding>
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#839#840#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MQTTClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/client/MQTTClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="62" column="26" lean-forward="false" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -84,22 +127,9 @@
       <file leaf-file-name="MessageQueue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="205">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelpMess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/client/HelpMess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-              <folding>
-                <element signature="e#1380#1381#0" expanded="true" />
-                <element signature="e#1407#1408#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -107,9 +137,21 @@
       <file leaf-file-name="ReciveMessageThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="121" column="75" lean-forward="false" selection-start-line="121" selection-start-column="75" selection-end-line="121" selection-end-column="75" />
+            <state relative-caret-position="192">
+              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,6 +186,7 @@
       <find>k</find>
       <find>Qos</find>
       <find>system</find>
+      <find>by</find>
     </findStrings>
     <replaceStrings>
       <replace>AbstractMess</replace>
@@ -164,7 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/helperClass/ArrayConnect.java" />
         <option value="$PROJECT_DIR$/src/test/java/helperTest/ArrayConnectTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/helperTest/PackageIdentifyTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/helperClass/PackageIdentify.java" />
@@ -195,16 +237,12 @@
         <option value="$PROJECT_DIR$/src/test/java/MQTTMessage/PublishMessageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/MQTTMessage/SubcribeMessageTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/client/TopicInformationTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java" />
         <option value="$PROJECT_DIR$/src/test/java/MQTTMessage/PingreqTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/SubscribeMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/messageHandler/MessageQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/SubackMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/UnsubscribeMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/TopicInformation.java" />
-        <option value="$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java" />
         <option value="$PROJECT_DIR$/src/test/java/MQTTMessage/ConnMessageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/ClientInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/Message.java" />
@@ -215,6 +253,11 @@
         <option value="$PROJECT_DIR$/src/main/java/messageHandler/MessageObservable.java" />
         <option value="$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/messageHandler/MessageHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messageHandler/PingReqThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" />
       </list>
     </option>
   </component>
@@ -280,9 +323,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="x" value="1" />
+    <option name="y" value="2" />
+    <option name="width" value="1685" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -405,6 +448,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MQTTMessage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MQTTimplement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MQTTimplement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MQTTMessage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1123,7 +1196,7 @@
       <workItem from="1586056476016" duration="13180000" />
       <workItem from="1586134310940" duration="11319000" />
       <workItem from="1586224229762" duration="8179000" />
-      <workItem from="1586325825885" duration="2208000" />
+      <workItem from="1586325825885" duration="7223000" />
     </task>
     <task id="LOCAL-00001" summary="细节修改">
       <created>1586238410437</created>
@@ -1139,43 +1212,50 @@
       <option name="project" value="LOCAL" />
       <updated>1586238681508</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改接收线程处理，修改HelpMess类">
+      <created>1586330140200</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586330140200</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BytesTest_byteTest01 - 2020.04.08 at 14h 13m 16s.xml">
-      <configuration name="BytesTest.byteTest01" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BytesTest_byteTest01 - 2020.04.08 at 14h 14m 23s.xml">
-      <configuration name="BytesTest.byteTest01" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BytesTest_byteTest01 - 2020.04.08 at 14h 14m 31s.xml">
-      <configuration name="BytesTest.byteTest01" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BytesTest_byteTest01 - 2020.04.08 at 14h 14m 39s.xml">
-      <configuration name="BytesTest.byteTest01" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BytesTest_byteTest01 - 2020.04.08 at 14h 14m 52s.xml">
-      <configuration name="BytesTest.byteTest01" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 14h 20m 19s.xml">
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 27m 26s.xml">
       <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 14h 21m 46s.xml">
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 29m 15s.xml">
       <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 14h 22m 10s.xml">
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 29m 59s.xml">
       <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 14h 23m 58s.xml">
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 31m 59s.xml">
       <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 14h 24m 42s.xml">
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 32m 30s.xml">
+      <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 32m 46s.xml">
+      <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 33m 34s.xml">
+      <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 34m 42s.xml">
+      <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 36m 51s.xml">
+      <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTTClientTest_runClient - 2020.04.08 at 16h 37m 28s.xml">
       <configuration name="MQTTClientTest.runClient" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297903000" />
+    <option name="totallyTimeSpent" value="302918000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1187,7 +1267,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="1" y="2" width="1685" height="1056" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1200,11 +1280,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14925373" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30260304" sideWeight="0.4936034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984614" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19349681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22338462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1229,7 +1310,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="细节修改" />
     <MESSAGE value="错误修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="错误修改" />
+    <MESSAGE value="修改接收线程处理，修改HelpMess类" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改接收线程处理，修改HelpMess类" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1241,43 +1323,37 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java</url>
-          <line>128</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/messageHandler/MessageQueue.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java</url>
           <line>110</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/messageHandler/PingReqThread.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/messageHandler/PingReqThread.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java</url>
           <line>29</line>
           <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="66" />
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="67" />
+      <option name="time" value="79" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1286,27 +1362,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/jdk1.8.0_60/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="695" column="29" lean-forward="false" selection-start-line="695" selection-start-column="29" selection-end-line="695" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PingrespMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PingreqMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1698,18 +1753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="99" column="43" lean-forward="true" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#939#940#0" expanded="false" />
-            <element signature="e#969#970#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/helperClass/BytesHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -1732,14 +1775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1768,16 +1803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-          <folding>
-            <element signature="e#986#987#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/ConnAckMessage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -1786,18 +1811,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/MQTTClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/client/HelpMess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
-          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
             <element signature="e#1380#1381#0" expanded="true" />
             <element signature="e#1407#1408#0" expanded="true" />
@@ -1805,52 +1822,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageObservable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="55" column="36" lean-forward="false" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="317">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PingrespMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/jdk1.8.0_60/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="695" column="29" lean-forward="false" selection-start-line="695" selection-start-column="29" selection-end-line="695" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="64" column="68" lean-forward="false" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+        <state relative-caret-position="222">
+          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageObservable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="121" column="75" lean-forward="false" selection-start-line="121" selection-start-column="75" selection-end-line="121" selection-end-column="75" />
+        <state relative-caret-position="192">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/MessageQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="205">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/MQTTClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="62" column="26" lean-forward="false" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PublishMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="45" lean-forward="false" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+        <state relative-caret-position="3210">
+          <caret line="116" column="9" lean-forward="false" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+          <folding>
+            <element signature="e#3602#3603#0" expanded="true" />
+            <element signature="e#3647#3648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/PingReqThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReSendMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding />
         </state>
       </provider>
