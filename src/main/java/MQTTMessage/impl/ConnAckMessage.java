@@ -18,6 +18,7 @@ public class ConnAckMessage extends AbstractMess{
 
 
     public boolean analysisMess() {
+        super.analysisMess();
         if((int)(uBytes[3]) != 0){
             System.out.print("连接失败！");
             return false;

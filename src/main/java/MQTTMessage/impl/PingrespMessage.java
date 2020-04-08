@@ -13,6 +13,7 @@ public class PingrespMessage extends AbstractMess {
 
     @Override
     public boolean analysisMess() {
-        return super.analysisMess();
+        super.analysisMess();
+        return true;
     }
 }

@@ -185,6 +185,7 @@ public class ReciveMessageThread implements Runnable{
             case 13:
                 //pingresq
                 message = new PingrespMessage(bytes);
+                message.analysisMess();
                 sendThread.delete(12);
                 break;
             default:

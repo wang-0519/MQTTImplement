@@ -91,10 +91,6 @@ public class SendMessageThread extends Thread{
         synchronized (by){
             by.notify();
         }
-        if(sign){
-            System.out.println("客户端存活");
-        }
-
     }
 
     /**

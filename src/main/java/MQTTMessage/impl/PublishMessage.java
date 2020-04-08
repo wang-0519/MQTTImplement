@@ -98,7 +98,7 @@ public class PublishMessage extends AbstractMess {
         sign += 2;
         mess.put("topic", Translater.binToString(Arrays.copyOfRange(uBytes, sign, sign + k)));
         sign += k;
-        if(mess.get("Qos").equals("Qos0")){
+        if(!mess.get("Qos").equals("Qos0")){
             mess_identify = Arrays.copyOfRange(uBytes, sign, sign + 2);
             sign += 2;
         }
