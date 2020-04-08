@@ -22,14 +22,8 @@ public class HelpMess implements Serializable{
     //错误信息
     private String errorMessage = null;
 
-    static private HelpMess instance = new HelpMess();
+    public HelpMess(){
 
-    private HelpMess(){
-
-    }
-
-    public static HelpMess getIntance(){
-        return instance;
     }
 
     public String getId() {
@@ -74,5 +68,9 @@ public class HelpMess implements Serializable{
 
     public void setType(HELP_MESS_TYPE type) {
         this.type = type;
+    }
+
+    public HELP_MESS_TYPE getType() {
+        return type;
     }
 }

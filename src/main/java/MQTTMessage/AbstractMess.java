@@ -2,13 +2,14 @@ package MQTTMessage;
 
 import helperClass.BytesHandler;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 
 /**
  * Created by admin on 2020/2/4.
  */
-public abstract class AbstractMess {
+public abstract class AbstractMess implements Serializable{
 
     //utf-8二进制报文
     protected byte[] uBytes = null;

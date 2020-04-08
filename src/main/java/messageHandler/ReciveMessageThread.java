@@ -46,17 +46,21 @@ public class ReciveMessageThread implements Runnable{
     public void run() {
         while(sign){
             try{
+                int temp = 0;
                 byte[] type = new byte[1];
                 byte[] buffer = null;
-                while((type[0] = (byte)bi.read()) != 0){
+                while((temp = bi.read()) != -1){
+                    type[0] = (byte)temp;
                     buffer = type;
                     int count = 0;
                     byte[] remainlen = new byte[4];
-                    remainlen[count] = (byte)bi.read();
-                    while(BytesHandler.and(remainlen[count],"10000000") != 0){
+                    temp = bi.read();
+                    while(temp != -1 && BytesHandler.and((byte)temp,"10000000") != 0){
+                        remainlen[count] = (byte)temp;
                         count++;
-                        remainlen[count] = (byte)bi.read();
+                        temp = bi.read();
                     }
+                    remainlen[count] = (byte)temp;
                     buffer = BytesHandler.connAll(buffer, Arrays.copyOfRange(remainlen, 0, count + 1));
                     int remainLen = BytesHandler.analysisRemainLen(Arrays.copyOfRange(remainlen, 0, count+1));
                     count = 0;
@@ -95,11 +99,11 @@ public class ReciveMessageThread implements Runnable{
                     sendThread.delete(1);
                 } else {
                     //连接错误
-                    HelpMess errorMess = HelpMess.getIntance();
+                    HelpMess errorMess = new HelpMess();
                     errorMess.setId(client.getId());
                     errorMess.setType(HelpMess.HELP_MESS_TYPE.ERROR);
                     errorMess.setErrorMessage(message.getOther_mess().get("errorMessage"));
-                    MessageObservable.getInstance().notifyObserver();
+                    MessageObservable.getInstance().notifyObserver(errorMess);
                 }
                 break;
             case 3:
@@ -107,7 +111,7 @@ public class ReciveMessageThread implements Runnable{
                 message = new PublishMessage(bytes);
                 if( message.analysisMess() ){
 
-                    HelpMess helpMess = HelpMess.getIntance();
+                    HelpMess helpMess = new HelpMess();
                     helpMess.setId(client.getId());
                     helpMess.setType(HelpMess.HELP_MESS_TYPE.RECIVE);
                     helpMess.setTopic(message.getOther_mess().get("topic"));
@@ -115,7 +119,7 @@ public class ReciveMessageThread implements Runnable{
                     help.setQos(message.getOther_mess().get("Qos"));
                     client.getTopic(message.getOther_mess().get("topic")).addMessage(help);
                     helpMess.setMessage(help);
-                    MessageObservable.getInstance().notifyObserver();
+                    MessageObservable.getInstance().notifyObserver(helpMess);
 
                     if(message.getOther_mess().get("Qos").equals("Qos1")){
                         sendThread.send(new PubackMessage(message.getMess_identify()));

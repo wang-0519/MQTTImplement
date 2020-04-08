@@ -50,6 +50,8 @@ public class BytesTest {
      */
     @Test
     public void byteTest01(){
+        byte temp = (byte)255;
+        System.out.println("  " + (int)temp);
         byte a = -1;
         if(Byte.toUnsignedInt(a) >= 128){
             System.out.println("+++++++" + Byte.toUnsignedInt(a));
@@ -83,4 +85,7 @@ public class BytesTest {
         }
         System.out.println("\n" + BytesHandler.analysisRemainLen(bytes));
     }
+
+
+
 }

@@ -6,6 +6,7 @@ helperClass\PackageIdentify.class
 MQTTMessage\impl\PubrecMessage.class
 MQTTMessage\impl\SubscribeMessage.class
 MQTTMessage\impl\UnsubackMessage.class
+client\HelpMess$HELP_MESS_TYPE.class
 MQTTMessage\impl\DisconnectMessage.class
 MQTTMessage\impl\PingrespMessage.class
 MQTTMessage\impl\PubackMessage.class

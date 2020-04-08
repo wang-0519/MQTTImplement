@@ -59,10 +59,10 @@ public class MessageHandler {
             reciveThread.start();
         }catch (Exception exception){
             client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
-            HelpMess errorMess = HelpMess.getIntance();
+            HelpMess errorMess = new HelpMess();
             errorMess.setType(HelpMess.HELP_MESS_TYPE.ERROR);
             errorMess.setErrorMessage("网络连接错误！");
-            MessageObservable.getInstance().notifyObserver();
+            MessageObservable.getInstance().notifyObserver(errorMess);
         }
     }
 

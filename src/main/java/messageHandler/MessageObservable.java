@@ -27,8 +27,8 @@ public class MessageObservable extends Observable {
         super.addObserver(observer);
     }
 
-    public void notifyObserver(){
+    public void notifyObserver(HelpMess helpMess){
         setChanged();
-        notifyObservers(HelpMess.getIntance());
+        notifyObservers(helpMess);
     }
 }
