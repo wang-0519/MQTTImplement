@@ -27,8 +27,10 @@ public class SubackMessage extends AbstractMess {
         if(super.analysisMess()) {
             int sign = 1 + remainLength.length;
             mess_identify = Arrays.copyOfRange(uBytes, sign, sign + 2);
+            variableHeader = mess_identify;
             sign += 2;
 
+            packageValue = Arrays.copyOfRange(uBytes, sign, uBytes.length);
             int i = 0;
             try {
                 while (sign < uBytes.length) {

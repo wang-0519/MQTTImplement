@@ -19,6 +19,7 @@ public class UnsubackMessage extends AbstractMess {
         if(super.analysisMess()){
             int sign = 1 + remainLength.length;
             mess_identify = Arrays.copyOfRange(uBytes, sign, uBytes.length);
+            variableHeader = mess_identify;
         }
         return true;
     }

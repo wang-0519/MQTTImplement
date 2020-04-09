@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class Translater {
 
     /**
-     * 将String字符串转化为UTF-8编码的二进制报文
+     * 将String字符串转化为UTF-8编码的byte数组
      * @param str
      * @return
      */
@@ -109,7 +109,19 @@ public class Translater {
         return sum;
     }
 
+    /**
+     * byte 转整数
+     * @param by
+     * @return
+     */
     static public int binToInt(byte by){
         return by > 0 ? by : by + 256;
+    }
+
+    /**
+     * byte 数组转二进制 01 字符串
+     */
+    static public String byteToBin(byte ubyte){
+        return Integer.toBinaryString((ubyte & 0xff) - 0x100).substring(24,32);
     }
 }

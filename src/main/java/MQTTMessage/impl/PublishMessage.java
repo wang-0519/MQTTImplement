@@ -95,13 +95,17 @@ public class PublishMessage extends AbstractMess {
 
         int sign = remainLength.length + 1;
         int k = Translater.binToInt(Arrays.copyOfRange(uBytes,sign,sign + 2));
+        variableHeader = Arrays.copyOfRange(uBytes, sign, sign + 2 + k);
         sign += 2;
         mess.put("topic", Translater.binToString(Arrays.copyOfRange(uBytes, sign, sign + k)));
         sign += k;
         if(!mess.get("Qos").equals("Qos0")){
             mess_identify = Arrays.copyOfRange(uBytes, sign, sign + 2);
+            variableHeader = BytesHandler.connAll(variableHeader, Arrays.copyOfRange(uBytes, sign, sign + 2));
             sign += 2;
         }
+
+        packageValue = Arrays.copyOfRange(uBytes, sign, uBytes.length);
         mess.put("message", Translater.binToString(Arrays.copyOfRange(uBytes, sign, uBytes.length)));
 
         return true;

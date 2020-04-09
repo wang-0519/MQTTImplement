@@ -100,6 +100,7 @@ public abstract class AbstractMess implements Serializable{
         }
         remainLength = Arrays.copyOfRange(uBytes,1,i+1);
         mess.put("remainLength","" + BytesHandler.analysisRemainLen(remainLength));
+        fixedHeader = BytesHandler.connAll(typeOfMess, remainLength);
         return true;
     }
 
@@ -109,5 +110,13 @@ public abstract class AbstractMess implements Serializable{
      */
     public byte[] getFixedHeader() {
         return fixedHeader;
+    }
+
+    public byte[] getVariableHeader() {
+        return variableHeader;
+    }
+
+    public byte[] getPackageValue() {
+        return packageValue;
     }
 }

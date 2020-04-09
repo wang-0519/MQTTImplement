@@ -2,6 +2,8 @@ package MQTTMessage.impl;
 
 import MQTTMessage.AbstractMess;
 
+import java.util.Arrays;
+
 /**
  * 回应连接报文
  * Created by admin on 2020/2/13.
@@ -19,6 +21,7 @@ public class ConnAckMessage extends AbstractMess{
 
     public boolean analysisMess() {
         super.analysisMess();
+        variableHeader = Arrays.copyOfRange(uBytes, 2, 4);
         if((int)(uBytes[3]) != 0){
             System.out.print("连接失败！");
             return false;

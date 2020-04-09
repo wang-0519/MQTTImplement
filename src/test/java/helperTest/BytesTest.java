@@ -1,5 +1,6 @@
 package helperTest;
 
+import MQTTMessage.impl.PingreqMessage;
 import helperClass.BytesHandler;
 import helperClass.Translater;
 import org.junit.Test;
@@ -87,5 +88,15 @@ public class BytesTest {
     }
 
 
+    @Test
+    public void byteTo01String(){
+        byte[] bytes = new PingreqMessage().getUBytes();
+        StringBuffer sb = new StringBuffer();
+        for(byte by : bytes){
+            sb.append(Translater.byteToBin(by) + "\n");
+        }
+        System.out.println(sb.toString());
+
+    }
 
 }

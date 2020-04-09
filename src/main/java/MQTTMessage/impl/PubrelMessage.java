@@ -54,6 +54,7 @@ public class PubrelMessage extends AbstractMess {
     public boolean analysisMess() {
         if(super.analysisMess()){
             mess_identify = Arrays.copyOfRange(uBytes, 1 + remainLength.length, uBytes.length);
+            variableHeader = mess_identify;
         }
         return true;
     }
