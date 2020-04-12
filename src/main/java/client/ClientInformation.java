@@ -137,7 +137,7 @@ public class ClientInformation implements Serializable {
      */
     public void deleteTopic(TopicInformation ti){
         int i = 0;
-        while(i < this.topicInformation.size() && this.topicInformation.get(i).equals(ti)){
+        while(i < this.topicInformation.size() && !this.topicInformation.get(i).equals(ti)){
             i++;
         }
         if( i < this.topicInformation.size()){
