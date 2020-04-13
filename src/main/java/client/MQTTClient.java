@@ -57,16 +57,13 @@ public class MQTTClient{
     /**
      * 发布报文
      */
-    public void publish(int qos, boolean retain, String topic, String mess){
-        AbstractMess message= new PublishMessage(qos, retain, topic, mess);
-        Message publishMessage = new Message(mess);
-        publishMessage.setQos(qos);
-        publishMessage.setRetain(retain);
-        client.getTopic(topic).addMessage(publishMessage);
+    public void publish(TopicInformation topic, Message mess){
+        AbstractMess publishMessage= new PublishMessage(mess.getQos(), mess.isRetain(), topic.getTopicName(), mess.getMessage());
+        client.getTopic(topic.getTopicName(), topic.getTpoicType()).addMessage(mess);
         if(client.getState() == ClientInformation.CONN_STATE.CONN){
-            handler.send(message);
+            handler.send(publishMessage);
         } else if(client.getState() == ClientInformation.CONN_STATE.SOCKET_CONNED){
-            handler.addMessageToQueue(message);
+            handler.addMessageToQueue(publishMessage);
         }
     }
 
@@ -121,10 +118,9 @@ public class MQTTClient{
     }
 
     /**
-     * 添加观察者, 用来向Android项目传递消息
-     * @param observer
+     * 清空二进制历史报文
      */
-    public void addObserver(AbstractMessageObserver observer){
-        MessageObservable.getInstance().addObserver(observer);
+    public void clearHistory(){
+        client.clearHistory();
     }
 }

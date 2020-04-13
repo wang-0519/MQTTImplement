@@ -31,7 +31,6 @@ public class SubackMessage extends AbstractMess {
             sign += 2;
 
             packageValue = Arrays.copyOfRange(uBytes, sign, uBytes.length);
-            int i = 0;
             try {
                 while (sign < uBytes.length) {
                     topicsIsSub.add(Translater.binToInt(uBytes[sign++]));

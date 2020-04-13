@@ -21,6 +21,9 @@ public class TopicInformation implements Serializable {
     private TOPICTYPE tpoicType = TOPICTYPE.SUBSCRIBE;
     private int Qos = 0;
 
+    //是否有新消息
+    boolean signOfNew = false;
+
     //消息列表
     private ArrayList<Message> messages = null;
 
@@ -54,6 +57,7 @@ public class TopicInformation implements Serializable {
 
     public void addMessage(Message message){
         messages.add(message);
+        this.signOfNew = true;
     }
 
     public int getQos() {
@@ -66,6 +70,22 @@ public class TopicInformation implements Serializable {
 
     public void setQos(String qos) {
         this.Qos = qos.charAt(3) - '0';
+    }
+
+    /**
+     * 判断是否有新消息
+     * @return
+     */
+    public boolean hasNew(){
+        return signOfNew;
+    }
+
+    /**
+     * 设置新消息标志
+     * @param temp
+     */
+    public void setNew(boolean temp){
+        signOfNew = temp;
     }
 
     @Override

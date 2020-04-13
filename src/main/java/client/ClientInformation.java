@@ -38,49 +38,20 @@ public class ClientInformation implements Serializable {
     //历史报文
     private ArrayList<AbstractMess> historyMessage = null;
 
+    //是否有新消息
+    private boolean signOfNew = false;
+
     public ClientInformation(){
         topicInformation = new ArrayList<>();
         historyMessage = new ArrayList<>();
     }
 
-    public CONN_STATE getState() {
-        return state;
-    }
-
-    public void setState(CONN_STATE state) {
-        this.state = state;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public ArrayList<AbstractMess> getHistoryMessage() {
-        return historyMessage;
-    }
-
-    public void addHistoryMessage(AbstractMess historyMessage) {
-        this.historyMessage.add(historyMessage);
-    }
-
-    public ArrayList<TopicInformation> getTopicInformation() {
-        return topicInformation;
-    }
-
-    public void setTopicInformation(ArrayList<TopicInformation> topicInformation) {
-        this.topicInformation = topicInformation;
-    }
-
     /**
      * 获取某一话题对象
      */
-    public TopicInformation getTopic(String topicName){
+    public TopicInformation getTopic(String topicName, TopicInformation.TOPICTYPE type){
         int i = 0;
-        while (i < topicInformation.size() && ! topicInformation.get(i).getTopicName().equals(topicName)){
+        while (i < topicInformation.size() && ! topicInformation.get(i).getTopicName().equals(topicName) && type == topicInformation.get(i).getTpoicType()){
             i++;
         }
         if(i < topicInformation.size()){
@@ -94,7 +65,15 @@ public class ClientInformation implements Serializable {
      * @param ti
      */
     public void addTopic(TopicInformation ti){
-        topicInformation.add(ti);
+        int i = 0;
+        while(i < topicInformation.size() && !topicInformation.get(i).equals(ti)){
+            i++;
+        }
+        if(i < topicInformation.size()){
+            topicInformation.get(i).setQos(ti.getQos());
+        } else {
+            topicInformation.add(ti);
+        }
     }
 
     /**
@@ -160,6 +139,77 @@ public class ClientInformation implements Serializable {
             topicInformation.remove(i);
             return true;
         }
+    }
+
+    /**
+     * 清空历史二进制报文
+     */
+    public void clearHistory(){
+        historyMessage.clear();
+    }
+
+    /**
+     * 判断是否有新消息
+     * @return
+     */
+    public boolean hasNew(){
+        return signOfNew;
+    }
+
+    /**
+     * 设置存在新消息
+     * @param topicInformation
+     */
+    public void setNewFalse(TopicInformation topicInformation){
+        getTopic(topicInformation.getTopicName(), topicInformation.getTpoicType()).setNew(false);
+        flushNew();
+    }
+
+    /**
+     * 刷新是否有新消息
+     */
+    public void flushNew(){
+        int i = 0;
+        while(i < topicInformation.size() && !topicInformation.get(i).hasNew()){
+            i++;
+        }
+        if(i < topicInformation.size()){
+            this.signOfNew = true;
+        } else {
+            this.signOfNew = false;
+        }
+    }
+
+    public CONN_STATE getState() {
+        return state;
+    }
+
+    public void setState(CONN_STATE state) {
+        this.state = state;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ArrayList<AbstractMess> getHistoryMessage() {
+        return historyMessage;
+    }
+
+    public void addHistoryMessage(AbstractMess historyMessage) {
+        this.historyMessage.add(historyMessage);
+    }
+
+    public ArrayList<TopicInformation> getTopicInformation() {
+        return topicInformation;
+    }
+
+    public void setTopicInformation(ArrayList<TopicInformation> topicInformation) {
+        this.topicInformation = topicInformation;
     }
 
     public String getName() {

@@ -115,7 +115,7 @@ public class Translater {
      * @return
      */
     static public int binToInt(byte by){
-        return by > 0 ? by : by + 256;
+        return by >= 0 ? by : by + 256;
     }
 
     /**
