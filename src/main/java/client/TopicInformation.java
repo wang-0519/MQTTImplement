@@ -57,7 +57,9 @@ public class TopicInformation implements Serializable {
 
     public void addMessage(Message message){
         messages.add(message);
-        this.signOfNew = true;
+        if(tpoicType == TOPICTYPE.SUBSCRIBE){
+            this.signOfNew = true;
+        }
     }
 
     public int getQos() {

@@ -51,7 +51,7 @@ public class ClientInformation implements Serializable {
      */
     public TopicInformation getTopic(String topicName, TopicInformation.TOPICTYPE type){
         int i = 0;
-        while (i < topicInformation.size() && ! topicInformation.get(i).getTopicName().equals(topicName) && type == topicInformation.get(i).getTpoicType()){
+        while (i < topicInformation.size() && (! topicInformation.get(i).getTopicName().equals(topicName) || type != topicInformation.get(i).getTpoicType())){
             i++;
         }
         if(i < topicInformation.size()){
@@ -115,28 +115,18 @@ public class ClientInformation implements Serializable {
      * @param ti
      */
     public void deleteTopic(TopicInformation ti){
-        int i = 0;
-        while(i < this.topicInformation.size() && !this.topicInformation.get(i).equals(ti)){
-            i++;
-        }
-        if( i < this.topicInformation.size()){
-            this.topicInformation.remove(i);
-        }
+        deleteTopic(ti.getTopicName(), ti.getTpoicType());
     }
 
     /**
      * 删除对应话题信息
      * @param topicName
      */
-    public boolean deleteTopic(String topicName){
-        int i = 0;
-        while (i < topicInformation.size() && ! topicInformation.get(i).getTopicName().equals(topicName)){
-            i++;
-        }
-        if(i < topicInformation.size()){
+    public boolean deleteTopic(String topicName, TopicInformation.TOPICTYPE type){
+        if(getTopic(topicName, type) == null){
             return false;
         }else {
-            topicInformation.remove(i);
+            topicInformation.remove(getTopic(topicName, type));
             return true;
         }
     }
