@@ -22,10 +22,6 @@ public class ConnAckMessage extends AbstractMess{
     public boolean analysisMess() {
         super.analysisMess();
         variableHeader = Arrays.copyOfRange(uBytes, 2, 4);
-        if((int)(uBytes[3]) != 0){
-            System.out.print("连接失败！");
-            return false;
-        }
         switch ((int)(uBytes[3])){
             case 0:
                 return true;

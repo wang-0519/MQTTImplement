@@ -33,7 +33,7 @@ public class Translater {
     }
 
     /**
-     * 整数二进制编码  无符号
+     * 整数 转 二进制编码  无符号
      * @param k   k 位二进制编码    k bit
      * @param n   数字
      * @return
@@ -110,7 +110,7 @@ public class Translater {
     }
 
     /**
-     * byte 转整数
+     * byte 转正整数
      * @param by
      * @return
      */
@@ -119,7 +119,7 @@ public class Translater {
     }
 
     /**
-     * byte 数组转二进制 01 字符串
+     * byte 转二进制 01 字符串
      */
     static public String byteToBin(byte ubyte){
         return Integer.toBinaryString((ubyte & 0xff) - 0x100).substring(24,32);

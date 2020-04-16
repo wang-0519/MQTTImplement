@@ -31,6 +31,12 @@ public class ConnMessage extends AbstractMess {
      * @param keepAlive
      */
     public ConnMessage(String client_id, String userName, String password, boolean willRetain, int willQoS, String willTopic, String willMessage, boolean cleanSession, int keepAlive){
+        mess.put("clientId", client_id);
+        mess.put("willRetain", String.valueOf(willRetain));
+        mess.put("willQos", String.valueOf(willQoS));
+        mess.put("cleanSession", String.valueOf(cleanSession));
+        mess.put("keepAlive", String.valueOf(keepAlive));
+
         this.client_id = client_id;
         boolean signOfName = false, signOfPass = false, willFlag = false;
         if(userName != null){
@@ -48,6 +54,7 @@ public class ConnMessage extends AbstractMess {
         }
         int k = editPackage(signOfName, signOfPass, willFlag);
         editVariableHeader(signOfName, signOfPass, willRetain, willQoS, willFlag, cleanSession, keepAlive);
+        mess.put("remainLen", "" + (k+10));
         editFixedHeader(k + 10);
         super.editUBytes();
     }

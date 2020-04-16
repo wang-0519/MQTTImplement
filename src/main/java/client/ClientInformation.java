@@ -81,7 +81,9 @@ public class ClientInformation implements Serializable {
      * @param topicInformation
      */
     public void addTopicInformation(ArrayList<TopicInformation> topicInformation) {
-        this.topicInformation.addAll(topicInformation);
+        for(TopicInformation ti : topicInformation){
+            addTopic(ti);
+        }
     }
 
     /**
