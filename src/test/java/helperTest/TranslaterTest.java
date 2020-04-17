@@ -3,6 +3,8 @@ package helperTest;
 import helperClass.Translater;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * Created by admin on 2020/2/6.
  */
@@ -50,5 +52,13 @@ public class TranslaterTest {
             System.out.print(bytes[i] + " ");
         }
         System.out.println("\n" + Translater.binToString(bytes));
+    }
+
+    @Test
+    public void byteToHexTest(){
+        System.out.println(Translater.byteToHex((byte) 0));
+        System.out.println((Translater.byteToBin(Translater.hexTobytes(Translater.byteToHex((byte) 0))[0])));
+        String str = " A\nC B N C";
+        System.out.println(str.replaceAll("\n","").replaceAll(" ",""));
     }
 }

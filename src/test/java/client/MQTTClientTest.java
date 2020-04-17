@@ -27,7 +27,6 @@ public class MQTTClientTest {
         TopicInformation ti = new TopicInformation();
         ti.setTopicName("hello/hello/hello");
         client.getClient().addTopic(ti);
-        client.publish(0,false, "hello/hello/hello", "123456789");
         while (true){
 
         }

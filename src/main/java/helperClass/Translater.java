@@ -33,7 +33,7 @@ public class Translater {
     }
 
     /**
-     * 整数 转 二进制编码  无符号
+     * 整数 转 byte[]  无符号
      * @param k   k 位二进制编码    k bit
      * @param n   数字
      * @return
@@ -65,7 +65,7 @@ public class Translater {
 
 
     /**
-     * 将接收的二进制报文转化为String字符串
+     * 将接收的 byte[] 转化为String字符串
      * @param bytes
      * @return
      */
@@ -78,7 +78,7 @@ public class Translater {
             char[] charSet = new char[bytes.length];
             int i = 0;
             while(i < bytes.length){
-                charSet[i] = (char)binToInt(Arrays.copyOfRange(bytes,i,i+1));
+                charSet[i] = (char)binToInt(bytes[i]);
                 i++;
             }
             str = URLDecoder.decode(String.valueOf(charSet),"UTF-8");
@@ -90,7 +90,7 @@ public class Translater {
     }
 
     /**
-     * 二进制报文转化为无符号整数
+     * byte[] 转化为无符号整数
      * @param bytes
      * @return
      */
@@ -123,5 +123,81 @@ public class Translater {
      */
     static public String byteToBin(byte ubyte){
         return Integer.toBinaryString((ubyte & 0xff) - 0x100).substring(24,32);
+    }
+
+    /**
+     * 二进制字符串 转 byte[]
+     * @param binString
+     * @return
+     */
+    static public byte[] binToBytes(String binString){
+        if(binString == null){
+            return null;
+        }
+        if(binString.length() == 0){
+            return new byte[0];
+        }
+        binString.replaceAll("\n","");
+        binString.replaceAll(" ","");
+        byte[] bytes = new byte[binString.length()/8];
+        int i = 0;
+        int temp = 0;
+        while (i < binString.length()){
+            temp = 0;
+            for(int j = 0; j < 8; j++){
+                temp *= 2;
+                temp += (binString.charAt(i) - '0');
+                i++;
+            }
+            bytes[i/8 - 1] = (byte)(temp < 0 ? temp + 265 : temp);
+        }
+        return bytes;
+    }
+
+    /**
+     * byte 转 十六进制字符串
+     * @param ubyte
+     * @return
+     */
+    public static String byteToHex(byte ubyte){
+        int temp = ubyte < 0 ? ubyte + 256 : ubyte;
+        StringBuilder sb = new StringBuilder();
+        sb.append(intToHexChar(temp/16));
+        sb.append(intToHexChar(temp%16));
+        return sb.toString();
+    }
+
+    private static char intToHexChar(int i){
+        return "0123456789ABCDEF".charAt(i);
+    }
+
+    /**
+     * 十六进制字符串转 byte[]
+     * @param hexString
+     * @return
+     */
+    public static byte[] hexTobytes(String hexString){
+        if(hexString == null){
+            return null;
+        }
+        if(hexString.length() == 0){
+            return new byte[0];
+        }
+        hexString.replaceAll(" ", "");
+        hexString.replaceAll("\n", "");
+        int i = 0;
+        int temp = 0;
+        byte[] bytes = new byte[hexString.length()/2];
+        while(i < hexString.length()){
+            temp = 0;
+            temp += hexCharToInt(hexString.charAt(i++));
+            temp = temp * 16 + hexCharToInt(hexString.charAt(i++));
+            bytes[i/2 - 1] = (byte)(temp < 0 ? temp + 265 : temp);
+        }
+        return bytes;
+    }
+
+    private static int hexCharToInt(char ch){
+        return "0123456789abcdef".indexOf(ch);
     }
 }
