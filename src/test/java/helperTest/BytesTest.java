@@ -90,13 +90,9 @@ public class BytesTest {
 
     @Test
     public void byteTo01String(){
-        byte[] bytes = new PingreqMessage().getUBytes();
-        StringBuffer sb = new StringBuffer();
-        for(byte by : bytes){
-            sb.append(Translater.byteToBin(by) + "\n");
-        }
-        System.out.println(sb.toString());
-
+        byte by = -79;
+        System.out.println((char)by);
+        System.out.println((byte)((char)by));
     }
 
 }

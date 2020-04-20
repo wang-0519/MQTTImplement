@@ -22,7 +22,8 @@ public class UnsubscribeMessage extends AbstractMess{
             mess_identify = PackageIdentify.getIdentify();
             this.topics = topics;
             int i = editPackage();
-            editVariableHeader();;
+            editVariableHeader();
+            this.mess.put("remianLen", "" + (i+2));
             editFixedHeader(i + 2);
         }catch(Exception e){
             e.printStackTrace();

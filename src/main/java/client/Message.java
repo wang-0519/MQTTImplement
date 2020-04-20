@@ -2,6 +2,7 @@ package client;
 
 import MQTTMessage.AbstractMess;
 import helperClass.TimeGetter;
+import helperClass.Translater;
 
 import java.io.Serializable;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
  * Created by admin on 2020/3/22.
  */
 public class Message implements Serializable{
+    private byte[] bytes = null;
     private String message = null;
     private String time = null;
     private int qos = 0;
@@ -17,6 +19,13 @@ public class Message implements Serializable{
 
     public Message(String mess){
         message = mess;
+        bytes = Translater.strToBin(mess);
+        time = TimeGetter.getTime();
+    }
+
+    public Message(byte[] bytes){
+        this.bytes = bytes;
+        message = Translater.binToString(bytes);
         time = TimeGetter.getTime();
     }
 
@@ -54,5 +63,13 @@ public class Message implements Serializable{
 
     public void setRetain(boolean retain) {
         isRetain = retain;
+    }
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public void setBytes(byte[] bytes) {
+        this.bytes = bytes;
     }
 }

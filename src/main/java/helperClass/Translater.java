@@ -33,7 +33,7 @@ public class Translater {
     }
 
     /**
-     * 整数 转 byte[]  无符号
+     * 正整数 转 byte[]  无符号
      * @param k   k 位二进制编码    k bit
      * @param n   数字
      * @return
@@ -78,7 +78,7 @@ public class Translater {
             char[] charSet = new char[bytes.length];
             int i = 0;
             while(i < bytes.length){
-                charSet[i] = (char)binToInt(bytes[i]);
+                charSet[i] = (char)bytes[i];
                 i++;
             }
             str = URLDecoder.decode(String.valueOf(charSet),"UTF-8");
@@ -137,8 +137,6 @@ public class Translater {
         if(binString.length() == 0){
             return new byte[0];
         }
-        binString.replaceAll("\n","");
-        binString.replaceAll(" ","");
         byte[] bytes = new byte[binString.length()/8];
         int i = 0;
         int temp = 0;
@@ -183,8 +181,7 @@ public class Translater {
         if(hexString.length() == 0){
             return new byte[0];
         }
-        hexString.replaceAll(" ", "");
-        hexString.replaceAll("\n", "");
+        hexString = hexString.toUpperCase();
         int i = 0;
         int temp = 0;
         byte[] bytes = new byte[hexString.length()/2];
@@ -198,6 +195,6 @@ public class Translater {
     }
 
     private static int hexCharToInt(char ch){
-        return "0123456789abcdef".indexOf(ch);
+        return "0123456789ABCDEF".indexOf(ch);
     }
 }

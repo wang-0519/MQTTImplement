@@ -58,7 +58,7 @@ public class MQTTClient{
      * 发布报文
      */
     public void publish(TopicInformation topic, Message mess){
-        AbstractMess publishMessage= new PublishMessage(mess.getQos(), mess.isRetain(), topic.getTopicName(), mess.getMessage());
+        AbstractMess publishMessage= new PublishMessage(mess.getQos(), mess.isRetain(), topic.getTopicName(), mess.getBytes());
         client.getTopic(topic.getTopicName(), topic.getTpoicType()).addMessage(mess);
         if(client.getState() == ClientInformation.CONN_STATE.CONN){
             handler.send(publishMessage);

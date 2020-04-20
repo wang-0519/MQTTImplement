@@ -2,8 +2,12 @@ package helperTest;
 
 import helperClass.Translater;
 import org.junit.Test;
+import sun.awt.AWTCharset;
 
+import java.beans.Encoder;
+import java.net.URLEncoder;
 import java.util.Arrays;
+import java.util.Base64;
 
 /**
  * Created by admin on 2020/2/6.
@@ -46,7 +50,7 @@ public class TranslaterTest {
      */
     @Test
     public void strToBinTest(){
-        String str = "hello";
+        String str = "你好";
         byte[] bytes = Translater.strToBin(str);
         for(int i = 0; i < bytes.length; i++){
             System.out.print(bytes[i] + " ");
@@ -56,9 +60,42 @@ public class TranslaterTest {
 
     @Test
     public void byteToHexTest(){
-        System.out.println(Translater.byteToHex((byte) 0));
-        System.out.println((Translater.byteToBin(Translater.hexTobytes(Translater.byteToHex((byte) 0))[0])));
-        String str = " A\nC B N C";
-        System.out.println(str.replaceAll("\n","").replaceAll(" ",""));
+        String str = "FF AA";
+        str = str.replaceAll(" ", "");
+        byte[] bytes = Translater.hexTobytes(str);
+        for(int i = 0; i < bytes.length; i++){
+            System.out.print(bytes[i] + " ");
+        }
+        System.out.println();
+        for(byte by : bytes){
+            System.out.print(Translater.byteToHex(by) + " ");
+        }
+    }
+
+    @Test
+    public void translaterTest(){
+        String hexString = "A0B1";
+        byte[] bytes = Translater.hexTobytes(hexString);
+        System.out.println("Translater.hexTobytes:" + Arrays.toString(bytes));
+        StringBuilder sb = new StringBuilder();
+        for(byte by : bytes){
+            sb.append((char)by);
+        }
+        String utfStr = null;
+        try{
+            utfStr = URLEncoder.encode(sb.toString(), "utf-8");
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        byte[] bys = Translater.strToBin(utfStr);
+        String binString = "";
+        for(byte by : bys){
+            binString += (Translater.byteToBin(by) + " ");
+        }
+        System.out.println("Translater.byteToBin:" + binString);
+        String str = Translater.binToString(bys);
+        System.out.println("Translater.binToString:" + str);
+        byte[] bys1 = Translater.strToBin(str);
+        System.out.println("Translater.strToBin:" + Arrays.toString(bys));
     }
 }
