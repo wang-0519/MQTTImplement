@@ -14,7 +14,7 @@ public class MQTTClientTest {
         ClientInformation ci = new ClientInformation();
         ci.setId(UUID.randomUUID().toString());
         ci.setUserName("hello");
-        ci.setAddr("192.168.1.13:1883");
+        ci.setAddr("192.168.1.8:1883");
         ci.setPassword(null);
         ci.setWillRetain(false);
         ci.setWillQos(0);
@@ -26,7 +26,10 @@ public class MQTTClientTest {
         MQTTClient client = new MQTTClient(ci);
         TopicInformation ti = new TopicInformation();
         ti.setTopicName("hello/hello/hello");
+        ti.setTpoicType(TopicInformation.TOPICTYPE.PUBLISH);
         client.getClient().addTopic(ti);
+        Message mes = new Message("hello");
+        client.publish(ti, mes);
         while (true){
 
         }

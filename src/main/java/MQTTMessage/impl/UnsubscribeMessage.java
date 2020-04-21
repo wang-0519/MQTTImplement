@@ -23,7 +23,7 @@ public class UnsubscribeMessage extends AbstractMess{
             this.topics = topics;
             int i = editPackage();
             editVariableHeader();
-            this.mess.put("remianLen", "" + (i+2));
+            this.mess.put("remainLen", "" + (i+2));
             editFixedHeader(i + 2);
         }catch(Exception e){
             e.printStackTrace();

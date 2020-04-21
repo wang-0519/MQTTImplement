@@ -19,7 +19,7 @@ public class PingReqThread implements Runnable {
     private ClientInformation ci = null;
 
     public PingReqThread(SendMessageThread thread, ClientInformation clientInformation){
-        this.keepAliveTime = clientInformation.getKeepAlive() - 5;
+        this.keepAliveTime = clientInformation.getKeepAlive() - 2;
         send = thread;
         this.ci = clientInformation;
     }

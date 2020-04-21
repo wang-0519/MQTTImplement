@@ -2,6 +2,7 @@ package messageHandler;
 
 import MQTTMessage.AbstractMess;
 import client.ClientInformation;
+import client.HelpMess;
 import helperClass.BytesHandler;
 
 import java.io.IOException;
@@ -61,6 +62,9 @@ public class SendMessageThread extends Thread{
                 if(waitSend.size() != 0){
                     //发送未发送的消息
                     while(waitSend.size() != 0){
+                        if(os == null){
+                            System.out.println("++++++++++");
+                        }
                         os.write(waitSend.getNextMessage().getUBytes());
                         os.flush();
                         addMessageToSended(waitSend.getNextMessage());
@@ -73,11 +77,16 @@ public class SendMessageThread extends Thread{
             }
         }catch (IOException io){
             io.printStackTrace();
-          setSign(false);
-          client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
+            setSign(false);
+            client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
         } catch (Exception e){
             e.printStackTrace();
+            HelpMess help = new HelpMess();
+            help.setType(HelpMess.HELP_MESS_TYPE.ERROR);
+            help.setErrorMessage("连接错误！");
+            MessageObservable.getInstance().notifyObserver(help);
             setSign(false);
+            client.setState(ClientInformation.CONN_STATE.CONN_ERROR);
         }
     }
 

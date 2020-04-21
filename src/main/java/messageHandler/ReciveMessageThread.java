@@ -97,6 +97,9 @@ public class ReciveMessageThread implements Runnable{
                     //报文正确，连接成功
                     client.setState(ClientInformation.CONN_STATE.CONN);
                     sendThread.delete(1);
+                    HelpMess conn = new HelpMess();
+                    conn.setType(HelpMess.HELP_MESS_TYPE.OTHER);
+                    MessageObservable.getInstance().notifyObserver(conn);
                 } else {
                     //连接错误
                     HelpMess errorMess = new HelpMess();

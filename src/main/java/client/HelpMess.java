@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class HelpMess implements Serializable{
 
     private HELP_MESS_TYPE type = HELP_MESS_TYPE.ERROR;
-    public enum HELP_MESS_TYPE{ERROR, RECIVE}
+    public enum HELP_MESS_TYPE{ERROR, RECIVE, OTHER}
 
     //客户端id
     private String id = null;
