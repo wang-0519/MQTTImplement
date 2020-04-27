@@ -121,6 +121,19 @@ public class ClientInformation implements Serializable {
     }
 
     /**
+     * 添加接收到的消息到对应的话题信息中
+     * @param topicName
+     * @param message
+     */
+    public void addMessage(String topicName, Message message){
+        for(TopicInformation ti : topicInformation){
+            if(ti.isTopicFilter(topicName)){
+                ti.addMessage(message);
+            }
+        }
+    }
+
+    /**
      * 删除对应话题信息
      * @param topicName
      */

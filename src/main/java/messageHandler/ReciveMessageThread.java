@@ -120,7 +120,7 @@ public class ReciveMessageThread implements Runnable{
                     helpMess.setTopic(message.getOther_mess().get("topic"));
                     Message help = new Message(message.getPackageValue());
                     help.setQos(message.getOther_mess().get("Qos"));
-                    client.getTopic(message.getOther_mess().get("topic"), TopicInformation.TOPICTYPE.SUBSCRIBE).addMessage(help);
+                    client.addMessage(message.getOther_mess().get("topic"), help);
                     helpMess.setMessage(help);
                     MessageObservable.getInstance().notifyObserver(helpMess);
 

@@ -23,19 +23,6 @@ public class PublishMessage extends AbstractMess {
      */
     public PublishMessage(int qos, boolean retain, String topic, String mess){
         this(qos, retain, topic, Translater.strToBin(mess));
-//        try{
-//            this.mess.put("message",mess);
-//            this.mess.put("Qos","Qos" + qos);
-//            if(qos > 0){
-//                this.mess_identify = PackageIdentify.getIdentify();
-//            }
-//            int i = editVariableHeader(topic, qos) + editPackage(mess);
-//            this.mess.put("remainLen", "" + i);
-//            editFixedHeader(qos, retain, i);
-//            super.editUBytes();
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }
     }
 
     public PublishMessage(int qos, boolean retain, String topic, byte[] pack){

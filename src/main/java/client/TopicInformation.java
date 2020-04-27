@@ -92,7 +92,49 @@ public class TopicInformation implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+        if(obj.getClass() != getClass()){
+            return false;
+        }
         TopicInformation info = (TopicInformation)obj;
         return this.topicName.equals(info.getTopicName()) && this.tpoicType == info.getTpoicType();
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash = (topicName == null ? 0 : topicName.hashCode()) + tpoicType.hashCode();
+        return hash;
+    }
+
+    /**
+     * 主题过滤器匹配
+     * @param tn
+     * @return
+     */
+    public boolean isTopicFilter(String tn){
+        if(tpoicType == TOPICTYPE.PUBLISH){
+            return false;
+        }
+        String[] names = topicName.split("/");
+        String[] name = tn.split("/");
+        if(names.length > name.length){
+            return false;
+        }
+        for(int i = 0; i < names.length; i++){
+            if(names[i].equals("#")){
+                return true;
+            }
+            if(names[i].equals("+")){
+                i++;
+            }else if( !names[i].equals(name[i]) ){
+                return false;
+            } else {
+                i++;
+            }
+        }
+        return true;
     }
 }
