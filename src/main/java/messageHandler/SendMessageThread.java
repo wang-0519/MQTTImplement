@@ -120,7 +120,7 @@ public class SendMessageThread extends Thread{
                 e.printStackTrace();
             }
         }
-        if( k == 3 && (mess.getOther_mess().get("Qos").charAt(3) - '0') != 0){
+        if( k == 3 && (mess.getOtherMess().get("Qos").charAt(3) - '0') != 0){
             sended.addMess(mess);
             try{
                 ReSendMessage send = new ReSendMessage(mess,this, 3, 10000);

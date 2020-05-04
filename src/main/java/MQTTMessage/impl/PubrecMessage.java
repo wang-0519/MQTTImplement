@@ -17,7 +17,7 @@ public class PubrecMessage extends AbstractMess {
      * @param identify
      */
     public PubrecMessage(byte[] identify){
-        mess_identify = identify;
+        messIdentify = identify;
         editVariableHeader();
         editFixedHeader();
         super.editUBytes();
@@ -47,14 +47,14 @@ public class PubrecMessage extends AbstractMess {
      * 可变报头只包含取消确认的报文的报文标识符
      */
     private void editVariableHeader(){
-        variableHeader = mess_identify;
+        variableHeader = messIdentify;
     }
 
     @Override
     public boolean analysisMess() {
         if(super.analysisMess()){
-            mess_identify = Arrays.copyOfRange(uBytes, 1 + remainLength.length, uBytes.length);
-            variableHeader = mess_identify;
+            messIdentify = Arrays.copyOfRange(uBytes, 1 + remainLength.length, uBytes.length);
+            variableHeader = messIdentify;
         }
         return true;
     }

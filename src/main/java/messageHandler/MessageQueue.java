@@ -39,7 +39,7 @@ public class MessageQueue {
      */
     public void deleteMess(byte[] identify){
         int i = 0;
-        while(i < messDeque.size() && !Arrays.equals(messDeque.get(i).getMess_identify(),identify)){
+        while(i < messDeque.size() && !Arrays.equals(messDeque.get(i).getMessIdentify(),identify)){
             i++;
         }
         if(i < messDeque.size()){
@@ -49,7 +49,7 @@ public class MessageQueue {
 
     public AbstractMess findMessByIdentify(byte[] identify){
         int i = 0;
-        while(i < messDeque.size() && !Arrays.equals(messDeque.get(i).getMess_identify(),identify)){
+        while(i < messDeque.size() && !Arrays.equals(messDeque.get(i).getMessIdentify(),identify)){
             i++;
         }
         if(i < messDeque.size()){

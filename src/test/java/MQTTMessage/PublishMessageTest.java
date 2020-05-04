@@ -29,7 +29,7 @@ public class PublishMessageTest {
         //解析二进制报文
         AbstractMess publish2 = new PublishMessage(ubytes);
         if(publish2.analysisMess()){
-            System.out.print("\n" + publish2.getOther_mess().toString());
+            System.out.print("\n" + publish2.getOtherMess().toString());
         }
     }
 }

@@ -30,7 +30,7 @@ public class PublishMessage extends AbstractMess {
         this.mess.put("Qos","Qos" + qos);
         this.mess.put("topic",topic);
         if(qos > 0 ){
-            this.mess_identify = PackageIdentify.getIdentify();
+            this.messIdentify = PackageIdentify.getIdentify();
         }
         int i = editVariableHeader(topic, qos);
         packageValue = pack;
@@ -65,7 +65,7 @@ public class PublishMessage extends AbstractMess {
     private int editVariableHeader(String topic, int qos){
         byte[] uTopic = BytesHandler.editStrWithLen(topic);
         if(qos > 0){
-            variableHeader = BytesHandler.connAll(uTopic, getMess_identify());
+            variableHeader = BytesHandler.connAll(uTopic, getMessIdentify());
         } else {
             variableHeader = uTopic;
         }
@@ -103,7 +103,7 @@ public class PublishMessage extends AbstractMess {
         mess.put("topic", Translater.binToString(Arrays.copyOfRange(uBytes, sign, sign + k)));
         sign += k;
         if(!mess.get("Qos").equals("Qos0")){
-            mess_identify = Arrays.copyOfRange(uBytes, sign, sign + 2);
+            messIdentify = Arrays.copyOfRange(uBytes, sign, sign + 2);
             variableHeader = BytesHandler.connAll(variableHeader, Arrays.copyOfRange(uBytes, sign, sign + 2));
             sign += 2;
         }

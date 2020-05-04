@@ -105,7 +105,7 @@ public class ReciveMessageThread implements Runnable{
                     HelpMess errorMess = new HelpMess();
                     errorMess.setId(client.getId());
                     errorMess.setType(HelpMess.HELP_MESS_TYPE.ERROR);
-                    errorMess.setErrorMessage(message.getOther_mess().get("errorMessage"));
+                    errorMess.setErrorMessage(message.getOtherMess().get("errorMessage"));
                     MessageObservable.getInstance().notifyObserver(errorMess);
                 }
                 break;
@@ -117,18 +117,18 @@ public class ReciveMessageThread implements Runnable{
                     HelpMess helpMess = new HelpMess();
                     helpMess.setId(client.getId());
                     helpMess.setType(HelpMess.HELP_MESS_TYPE.RECIVE);
-                    helpMess.setTopic(message.getOther_mess().get("topic"));
+                    helpMess.setTopic(message.getOtherMess().get("topic"));
                     Message help = new Message(message.getPackageValue());
-                    help.setQos(message.getOther_mess().get("Qos"));
-                    client.addMessage(message.getOther_mess().get("topic"), help);
+                    help.setQos(message.getOtherMess().get("Qos"));
+                    client.addMessage(message.getOtherMess().get("topic"), help);
                     helpMess.setMessage(help);
                     MessageObservable.getInstance().notifyObserver(helpMess);
 
-                    if(message.getOther_mess().get("Qos").equals("Qos1")){
-                        sendThread.send(new PubackMessage(message.getMess_identify()));
+                    if(message.getOtherMess().get("Qos").equals("Qos1")){
+                        sendThread.send(new PubackMessage(message.getMessIdentify()));
                     }
-                    if(message.getOther_mess().get("Qos").equals("Qos2")){
-                        sendThread.send(new PubrecMessage(message.getMess_identify()));
+                    if(message.getOtherMess().get("Qos").equals("Qos2")){
+                        sendThread.send(new PubrecMessage(message.getMessIdentify()));
                     }
                 }
                 break;
@@ -136,37 +136,37 @@ public class ReciveMessageThread implements Runnable{
                 //puback
                 message = new PubackMessage(bytes, 1);
                 if( message.analysisMess() ){
-                    sendThread.delete(message.getMess_identify());
+                    sendThread.delete(message.getMessIdentify());
                 }
                 break;
             case 5:
                 //pubrec
                 message = new PubrecMessage(bytes, 1);
                 if( message.analysisMess() ){
-                    sendThread.send(new PubrelMessage(message.getMess_identify()));
-                    sendThread.delete(message.getMess_identify());
+                    sendThread.send(new PubrelMessage(message.getMessIdentify()));
+                    sendThread.delete(message.getMessIdentify());
                 }
                 break;
             case 6:
                 //pubrel
                 message = new PubrelMessage(bytes, 1);
                 if( message.analysisMess() ){
-                    sendThread.send(new PubcompMessage(message.getMess_identify()));
-                    sendThread.delete(message.getMess_identify());
+                    sendThread.send(new PubcompMessage(message.getMessIdentify()));
+                    sendThread.delete(message.getMessIdentify());
                 }
                 break;
             case 7:
                 //pubcomp
                 message = new PubcompMessage(bytes, 1);
                 if( message.analysisMess() ){
-                    sendThread.delete(message.getMess_identify());
+                    sendThread.delete(message.getMessIdentify());
                 }
                 break;
             case 9:
                 //suback
                 message = new SubackMessage(bytes);
                 if(message.analysisMess()){
-                    ArrayList<TopicInformation> topics = ((SubscribeMessage)(sendThread.getMessByIdentify(message.getMess_identify()))).getTopics();
+                    ArrayList<TopicInformation> topics = ((SubscribeMessage)(sendThread.getMessByIdentify(message.getMessIdentify()))).getTopics();
                     ArrayList<Integer> topicIsSub = ((SubackMessage)message).getTopicsIsSub();
                     if(topicIsSub.size() == topics.size()){
                         for(int i = 0; i < topicIsSub.size(); i++){
@@ -174,15 +174,15 @@ public class ReciveMessageThread implements Runnable{
                         }
                     }
                     client.updateTopicInformation(topics);
-                    sendThread.delete(message.getMess_identify());
+                    sendThread.delete(message.getMessIdentify());
                 }
                 break;
             case 11:
                 //unsuback
                 message = new UnsubackMessage(bytes);
                 if(message.analysisMess()){
-                    ArrayList<TopicInformation> topics = ((UnsubscribeMessage)(sendThread.getMessByIdentify(message.getMess_identify()))).getTopics();
-                    sendThread.delete(message.getMess_identify());
+                    ArrayList<TopicInformation> topics = ((UnsubscribeMessage)(sendThread.getMessByIdentify(message.getMessIdentify()))).getTopics();
+                    sendThread.delete(message.getMessIdentify());
                 }
                 break;
             case 13:

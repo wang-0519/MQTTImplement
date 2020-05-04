@@ -19,7 +19,7 @@ public class UnsubscribeMessage extends AbstractMess{
 
     public UnsubscribeMessage(ArrayList<TopicInformation> topics){
         try{
-            mess_identify = PackageIdentify.getIdentify();
+            messIdentify = PackageIdentify.getIdentify();
             this.topics = topics;
             int i = editPackage();
             editVariableHeader();
@@ -45,7 +45,7 @@ public class UnsubscribeMessage extends AbstractMess{
      * 编辑可变报头
      */
     private void editVariableHeader(){
-        variableHeader = mess_identify;
+        variableHeader = messIdentify;
     }
 
     /**

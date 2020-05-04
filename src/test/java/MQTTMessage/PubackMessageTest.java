@@ -23,8 +23,8 @@ public class PubackMessageTest {
 
         AbstractMess pubAck = new PubackMessage(mess, 1);
         pubAck.analysisMess();
-        for(int i = 0; i < pubAck.getMess_identify().length; i++){
-            System.out.print((int)pubAck.getMess_identify()[i] + " ");
+        for(int i = 0; i < pubAck.getMessIdentify().length; i++){
+            System.out.print((int)pubAck.getMessIdentify()[i] + " ");
         }
     }
 }

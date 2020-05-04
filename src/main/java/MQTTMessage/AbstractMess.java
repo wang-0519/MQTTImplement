@@ -14,7 +14,7 @@ public abstract class AbstractMess implements Serializable{
     //utf-8二进制报文
     protected byte[] uBytes = null;
     //报文标识符
-    protected byte[] mess_identify = null;
+    protected byte[] messIdentify = null;
     /**
      * 报文的各类信息
      * message 报文
@@ -69,8 +69,8 @@ public abstract class AbstractMess implements Serializable{
      * 获取报文标识符
      * @return
      */
-    public byte[] getMess_identify(){
-        return mess_identify;
+    public byte[] getMessIdentify(){
+        return messIdentify;
     }
 
     /**
@@ -85,7 +85,7 @@ public abstract class AbstractMess implements Serializable{
      * 获取HashMap
      * @return
      */
-    public HashMap<String,String> getOther_mess(){
+    public HashMap<String,String> getOtherMess(){
         return mess;
     }
 
