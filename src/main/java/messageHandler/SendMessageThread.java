@@ -59,17 +59,11 @@ public class SendMessageThread extends Thread{
         this.sign = true;
         try{
             while(sign){
-                if(waitSend.size() != 0){
-                    //发送未发送的消息
-                    while(waitSend.size() != 0){
-                        if(os == null){
-                            System.out.println("++++++++++");
-                        }
+                while(waitSend.size() != 0){
                         os.write(waitSend.getNextMessage().getUBytes());
                         os.flush();
                         addMessageToSended(waitSend.getNextMessage());
                         waitSend.deleteNext();
-                    }
                 }
                 synchronized (by){
                     by.wait();
