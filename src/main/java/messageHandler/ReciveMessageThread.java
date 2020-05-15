@@ -196,6 +196,7 @@ public class ReciveMessageThread implements Runnable{
                 System.out.println("报文类型错误");
         }
         if(message != null){
+            message.setMessDir("S->C");
             client.addHistoryMessage(message);
         }
     }

@@ -41,6 +41,9 @@ public abstract class AbstractMess implements Serializable{
     //负载
     protected byte[] packageValue = null;
 
+    //消息方向
+    private String messDir = "C->S";
+
     /**
      * 初始化参数
      */
@@ -118,5 +121,13 @@ public abstract class AbstractMess implements Serializable{
 
     public byte[] getPackageValue() {
         return packageValue;
+    }
+
+    public String getMessDir() {
+        return messDir;
+    }
+
+    public void setMessDir(String messDir) {
+        this.messDir = messDir;
     }
 }

@@ -89,6 +89,7 @@ public class SendMessageThread extends Thread{
      * @param mess
      */
     public void send(AbstractMess mess){
+        mess.setMessDir("C->S");
         client.addHistoryMessage(mess);
         waitSend.addMess(mess);
         synchronized (by){
@@ -177,6 +178,7 @@ public class SendMessageThread extends Thread{
     }
 
     public void addMessageToQueue(AbstractMess message){
+        message.setMessDir("C->S");
         client.addHistoryMessage(message);
         waitSend.addMess(message);
     }
