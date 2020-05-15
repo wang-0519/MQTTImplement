@@ -28,6 +28,7 @@ public class PingReqThread implements Runnable {
     public void run() {
         try{
             AbstractMess message = null;
+            Thread.currentThread().sleep(keepAliveTime*1000);
             while(sign){
                 message = new PingreqMessage();
                 if(ci.getState() == ClientInformation.CONN_STATE.CONN){

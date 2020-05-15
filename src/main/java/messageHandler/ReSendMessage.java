@@ -26,7 +26,7 @@ public class ReSendMessage implements Runnable {
         try{
             int i = 0;
             Thread.currentThread().sleep(waitTime);
-            while(thread.contains(mess) && i < (timeOut*1000)/waitTime){
+            while(thread.contains(mess) && i < timeOut/waitTime){
                 Thread.currentThread().sleep(waitTime);
                 thread.send(mess);
                 i++;

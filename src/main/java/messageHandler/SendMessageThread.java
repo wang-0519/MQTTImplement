@@ -58,7 +58,7 @@ public class SendMessageThread extends Thread{
     public void run() {
         this.sign = true;
         try{
-            while(sign){
+            while(sign && client.getState() != ClientInformation.CONN_STATE.CONN_ERROR){
                 while(waitSend.size() != 0){
                         os.write(waitSend.getNextMessage().getUBytes());
                         os.flush();
@@ -108,7 +108,7 @@ public class SendMessageThread extends Thread{
         if( k == 1 || k == 5 || k == 6 || k == 8 || k == 10){
             sended.addMess(mess);
             try{
-                ReSendMessage send = new ReSendMessage(mess,this, 3, 10000);
+                ReSendMessage send = new ReSendMessage(mess,this, client.getConnTimeout(), client.getReconnPeriod());
                 threadPool.execute(send);
             }catch (Exception e){
                 e.printStackTrace();
@@ -117,7 +117,7 @@ public class SendMessageThread extends Thread{
         if( k == 3 && (mess.getOtherMess().get("Qos").charAt(3) - '0') != 0){
             sended.addMess(mess);
             try{
-                ReSendMessage send = new ReSendMessage(mess,this, 3, 10000);
+                ReSendMessage send = new ReSendMessage(mess,this, client.getConnTimeout(), client.getReconnPeriod());
                 threadPool.execute(send);
             }catch (Exception e){
                 e.printStackTrace();
