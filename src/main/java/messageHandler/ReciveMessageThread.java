@@ -100,6 +100,8 @@ public class ReciveMessageThread implements Runnable{
                     HelpMess conn = new HelpMess();
                     conn.setType(HelpMess.HELP_MESS_TYPE.OTHER);
                     MessageObservable.getInstance().notifyObserver(conn);
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                 } else {
                     //连接错误
                     HelpMess errorMess = new HelpMess();
@@ -124,6 +126,9 @@ public class ReciveMessageThread implements Runnable{
                     helpMess.setMessage(help);
                     MessageObservable.getInstance().notifyObserver(helpMess);
 
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
+
                     if(message.getOtherMess().get("Qos").equals("Qos1")){
                         sendThread.send(new PubackMessage(message.getMessIdentify()));
                     }
@@ -137,12 +142,16 @@ public class ReciveMessageThread implements Runnable{
                 message = new PubackMessage(bytes, 1);
                 if( message.analysisMess() ){
                     sendThread.delete(message.getMessIdentify());
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                 }
                 break;
             case 5:
                 //pubrec
                 message = new PubrecMessage(bytes, 1);
                 if( message.analysisMess() ){
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                     sendThread.send(new PubrelMessage(message.getMessIdentify()));
                     sendThread.delete(message.getMessIdentify());
                 }
@@ -151,6 +160,8 @@ public class ReciveMessageThread implements Runnable{
                 //pubrel
                 message = new PubrelMessage(bytes, 1);
                 if( message.analysisMess() ){
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                     sendThread.send(new PubcompMessage(message.getMessIdentify()));
                     sendThread.delete(message.getMessIdentify());
                 }
@@ -159,6 +170,8 @@ public class ReciveMessageThread implements Runnable{
                 //pubcomp
                 message = new PubcompMessage(bytes, 1);
                 if( message.analysisMess() ){
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                     sendThread.delete(message.getMessIdentify());
                 }
                 break;
@@ -173,6 +186,8 @@ public class ReciveMessageThread implements Runnable{
                             topics.get(i).setQos(topicIsSub.get(i));
                         }
                     }
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                     client.updateTopicInformation(topics);
                     sendThread.delete(message.getMessIdentify());
                 }
@@ -183,6 +198,8 @@ public class ReciveMessageThread implements Runnable{
                 if(message.analysisMess()){
                     ArrayList<TopicInformation> topics = ((UnsubscribeMessage)(sendThread.getMessByIdentify(message.getMessIdentify()))).getTopics();
                     sendThread.delete(message.getMessIdentify());
+                    message.setMessDir("S->C");
+                    client.addHistoryMessage(message);
                 }
                 break;
             case 13:
@@ -190,14 +207,12 @@ public class ReciveMessageThread implements Runnable{
                 message = new PingrespMessage(bytes);
                 message.analysisMess();
                 sendThread.delete(12);
+                message.setMessDir("S->C");
+                client.addHistoryMessage(message);
                 break;
             default:
                 //报错
                 System.out.println("报文类型错误");
-        }
-        if(message != null){
-            message.setMessDir("S->C");
-            client.addHistoryMessage(message);
         }
     }
 
