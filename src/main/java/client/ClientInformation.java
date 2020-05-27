@@ -4,6 +4,8 @@ import MQTTMessage.AbstractMess;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * 客户端信息
@@ -44,6 +46,7 @@ public class ClientInformation implements Serializable {
     public ClientInformation(){
         topicInformation = new ArrayList<>();
         historyMessage = new ArrayList<>();
+        Collections.synchronizedList(historyMessage);
     }
 
     /**

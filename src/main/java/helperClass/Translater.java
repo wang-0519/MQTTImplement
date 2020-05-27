@@ -19,12 +19,14 @@ public class Translater {
     static public byte[] strToBin(String str){
         byte[] bytes = null;
         try{
-            String UTFstr = URLEncoder.encode(str,"UTF-8");
-            char[] charSet = UTFstr.toCharArray();
-            bytes = new byte[charSet.length];
-            for(int i = 0; i < charSet.length; i++){
-                System.arraycopy(intToBin((int)charSet[i],8), 0, bytes, i, 1);
-            }
+//            String UTFstr = URLEncoder.encode(str,"UTF-8");
+//            char[] charSet = UTFstr.toCharArray();
+//            bytes = new byte[charSet.length];
+//            for(int i = 0; i < charSet.length; i++){
+//                System.arraycopy(intToBin((int)charSet[i],8), 0, bytes, i, 1);
+//            }
+            str = new String(str.getBytes(),"UTF-8");
+            bytes = str.getBytes();
         }catch(Exception e){
             System.out.println("Translater.strToBin===>");
             e.printStackTrace();
@@ -75,13 +77,14 @@ public class Translater {
 //        }
         String str = null;
         try{
-            char[] charSet = new char[bytes.length];
-            int i = 0;
-            while(i < bytes.length){
-                charSet[i] = (char)bytes[i];
-                i++;
-            }
-            str = URLDecoder.decode(String.valueOf(charSet),"UTF-8");
+//            char[] charSet = new char[bytes.length];
+//            int i = 0;
+//            while(i < bytes.length){
+//                charSet[i] = (char)bytes[i];
+//                i++;
+//            }
+//            str = URLDecoder.decode(String.valueOf(charSet),"UTF-8");
+            str = new String(bytes, "UTF-8");
         }catch(Exception e){
             System.out.print("Translater.binToString===>");
             e.printStackTrace();

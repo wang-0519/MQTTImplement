@@ -50,13 +50,21 @@ public class TranslaterTest {
      */
     @Test
     public void strToBinTest(){
-        String str = "你好";
-        byte[] bytes = Translater.strToBin(str);
-        for(int i = 0; i < bytes.length; i++){
-            System.out.print(bytes[i] + " ");
+        try{
+            String str = "你好";
+            byte[] bytes = Translater.strToBin(str);
+            for(int i = 0; i < bytes.length; i++){
+                System.out.print(bytes[i] + " ");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        System.out.println("\n" + Translater.binToString(bytes));
+
+        byte[] bys = {-28,-67,-96,-27,-91,-67};
+        System.out.println("\n" + Translater.binToString(bys));
     }
+
+
 
     @Test
     public void byteToHexTest(){

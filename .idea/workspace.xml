@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd530a7f-08c9-4729-9538-f2fe31dd5a69" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/ReSendMessage.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/ReSendMessage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MQTTimplement-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/MQTTimplement-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MQTTMessage/AbstractMess.class" afterPath="$PROJECT_DIR$/target/classes/MQTTMessage/AbstractMess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/ReciveMessageThread.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/ReciveMessageThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/messageHandler/SendMessageThread.class" afterPath="$PROJECT_DIR$/target/classes/messageHandler/SendMessageThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/helperTest/TranslaterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/helperTest/TranslaterTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java" afterPath="$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" afterPath="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/client/ClientInformation.java" afterPath="$PROJECT_DIR$/src/main/java/client/ClientInformation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/helperClass/Translater.java" afterPath="$PROJECT_DIR$/src/main/java/helperClass/Translater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java" afterPath="$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,43 +37,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractMess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
-              <folding>
-                <element signature="e#2434#2435#0" expanded="true" />
-                <element signature="e#2464#2465#0" expanded="true" />
-                <element signature="e#2510#2511#0" expanded="true" />
-                <element signature="e#2548#2549#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SendMessageThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1385">
-              <caret line="91" column="32" lean-forward="true" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReciveMessageThread.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="198" column="39" lean-forward="false" selection-start-line="198" selection-start-column="39" selection-end-line="198" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -152,12 +120,9 @@
         <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/ConnAckMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/Message.java" />
         <option value="$PROJECT_DIR$/src/test/java/helperTest/BytesTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/helperClass/Translater.java" />
         <option value="$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/MQTTClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/HelpMess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/client/ClientInformation.java" />
         <option value="$PROJECT_DIR$/src/main/java/client/TopicInformation.java" />
         <option value="$PROJECT_DIR$/src/test/java/client/TopicInformationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/impl/PubrelMessage.java" />
@@ -177,6 +142,9 @@
         <option value="$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java" />
         <option value="$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/helperClass/Translater.java" />
+        <option value="$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/client/ClientInformation.java" />
       </list>
     </option>
   </component>
@@ -265,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -288,6 +257,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MQTTimplement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MQTTimplement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helperTest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,6 +385,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helperClass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -412,7 +419,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -436,7 +442,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TopicInformationTest.test">
+  <component name="RunManager" selected="JUnit.TranslaterTest.strToBinTest">
     <configuration default="false" name="MQTTClientTest.runClient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -985,10 +991,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TopicInformationTest.test" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MQTTClientTest.runClient" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TranslaterTest.translaterTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TranslaterTest.strToBinTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TranslaterTest.strToBinTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TopicInformationTest.test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MQTTClientTest.runClient" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TranslaterTest.translaterTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.BytesTest.byteTo01String" />
       </list>
     </recent_temporary>
@@ -1065,7 +1071,8 @@
       <workItem from="1588653977692" duration="8273000" />
       <workItem from="1588765580848" duration="626000" />
       <workItem from="1588822191414" duration="3134000" />
-      <workItem from="1589509366496" duration="5311000" />
+      <workItem from="1589509366496" duration="6038000" />
+      <workItem from="1590538018357" duration="3683000" />
     </task>
     <task id="LOCAL-00001" summary="细节修改">
       <created>1586238410437</created>
@@ -1186,43 +1193,50 @@
       <option name="project" value="LOCAL" />
       <updated>1589545073914</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="AbstractMess新增messDir字段记录交互报文发送方向">
+      <created>1589546446107</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589546446107</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 14h 59m 54s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 32m 40s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 00m 09s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 33m 52s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 19m 04s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 34m 37s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 29m 06s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 34m 50s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 29m 17s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 34m 59s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 29m 25s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 39m 56s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 29m 40s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 44m 54s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 30m 48s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 48m 11s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.04.27 at 15h 31m 02s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 50m 43s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TopicInformationTest_test - 2020.05.04 at 18h 33m 42s.xml">
-      <configuration name="TopicInformationTest.test" configurationId="JUnit" />
+    <history-entry file="TranslaterTest_strToBinTest - 2020.05.27 at 08h 51m 14s.xml">
+      <configuration name="TranslaterTest.strToBinTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387284000" />
+    <option name="totallyTimeSpent" value="391694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1239,6 +1253,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.49166667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1250,7 +1265,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23861171" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23294243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23560767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1262,7 +1277,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.49166667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984614" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1291,7 +1305,8 @@
     <MESSAGE value="细节更改" />
     <MESSAGE value="发送消息线程细节更改" />
     <MESSAGE value="修改重发时间" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改重发时间" />
+    <MESSAGE value="AbstractMess新增messDir字段记录交互报文发送方向" />
+    <option name="LAST_COMMIT_MESSAGE" value="AbstractMess新增messDir字段记录交互报文发送方向" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1301,18 +1316,6 @@
           <line>26</line>
           <properties />
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/helperClass/Translater.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/client/MQTTClientTest.java</url>
@@ -1327,7 +1330,7 @@
           <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="97" />
+      <option name="time" value="99" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1406,37 +1409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="14" column="73" lean-forward="true" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2640">
-          <caret line="95" column="36" lean-forward="false" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/helperTest/BytesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2610">
-          <caret line="92" column="21" lean-forward="false" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/helperClass/Translater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5310">
-          <caret line="183" column="44" lean-forward="false" selection-start-line="183" selection-start-column="44" selection-end-line="183" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1444#1445#0" expanded="false" />
-            <element signature="e#1481#1482#0" expanded="false" />
-            <element signature="e#3976#3977#0" expanded="false" />
-            <element signature="e#4027#4028#0" expanded="false" />
-            <element signature="e#4785#4786#0" expanded="false" />
-            <element signature="e#4838#4839#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1652,7 +1624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="1971" column="17" lean-forward="false" selection-start-line="1971" selection-start-column="17" selection-end-line="1971" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1812,14 +1783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/client/ClientInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/client/MQTTClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1828,31 +1791,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="130" column="31" lean-forward="true" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
-          <folding>
-            <element signature="e#2434#2435#0" expanded="true" />
-            <element signature="e#2464#2465#0" expanded="true" />
-            <element signature="e#2510#2511#0" expanded="true" />
-            <element signature="e#2548#2549#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="284">
+          <caret line="198" column="39" lean-forward="false" selection-start-line="198" selection-start-column="39" selection-end-line="198" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/SendMessageThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1385">
-          <caret line="91" column="32" lean-forward="true" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
+        <state relative-caret-position="2430">
+          <caret line="91" column="32" lean-forward="false" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messageHandler/ReciveMessageThread.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MQTTMessage/AbstractMess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="198" column="39" lean-forward="false" selection-start-line="198" selection-start-column="39" selection-end-line="198" selection-end-column="39" />
+        <state relative-caret-position="587">
+          <caret line="130" column="31" lean-forward="false" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="31" />
+          <folding>
+            <element signature="e#2434#2435#0" expanded="false" />
+            <element signature="e#2464#2465#0" expanded="false" />
+            <element signature="e#2510#2511#0" expanded="false" />
+            <element signature="e#2548#2549#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/client/ClientInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/helperClass/Translater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="86" column="45" lean-forward="true" selection-start-line="86" selection-start-column="45" selection-end-line="86" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/helperTest/TranslaterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/helperTest/BytesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="92" column="21" lean-forward="false" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
           <folding />
         </state>
       </provider>
